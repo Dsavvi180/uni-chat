@@ -1,0 +1,268 @@
+/* ==================== Global Resets and Base Styles ==================== */
+h3,
+h5,
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+/* ==================== Layout Container Styles ==================== */
+.post-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d9d9d9;
+}
+
+/* ==================== Post Card and Profile Styles ==================== */
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 70%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  padding: 15px;
+  padding-bottom: 10px;
+  background-color: #ffffff;
+}
+.card-profile {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.user-info-caption {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.name > h3 {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0px;
+}
+
+.activity > h5 {
+  font-size: 16px;
+  font-weight: 100;
+  color: rgb(114, 113, 113);
+  padding: 0px;
+}
+
+.degree-info {
+  font-size: 14px;
+  font-weight: 100;
+  color: rgb(65, 65, 65);
+  padding: 0px;
+}
+
+.card-img-section {
+  width: 100%;
+  height: 80%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+  padding: 0px;
+  margin: 0px;
+}
+/* ==================== Scroll Bar and Image Styles ==================== */
+.img-scroll {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  flex: 1;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.img-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 9px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/* ==================== Loading Spinner ==================== */
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.loading-widget > h1 {
+  font-weight: 300;
+  font-size: 17px;
+}
+
+/* ==================== Responsive Design ==================== */
+
+/* =========== Screen Width Media Queries ========= */
+@media screen and (max-width: 1200px) {
+  .post-card {
+    width: 45%;
+    height: 70%;
+  }
+  .img {
+    width: 83%;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 955px) {
+  .post-card {
+    width: 45%;
+    height: 65%;
+  }
+  .img {
+    width: 83%;
+    height: 98%;
+  }
+}
+@media screen and (max-width: 775px) {
+  .post-card {
+    width: 45%;
+    height: 70%;
+  }
+  .img {
+    width: 83%;
+    height: 93%;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .post-card {
+    width: 75%;
+    height: 85%;
+  }
+  .card-profile {
+    flex-direction: column;
+  }
+  .user-info-caption {
+    flex-direction: column;
+  }
+  .degree-info {
+    text-align: center;
+  }
+  .img {
+    width: 83%;
+    height: 80%;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .post-card {
+    width: 75%;
+    height: 75%;
+  }
+  .img {
+    width: 83%;
+    height: 85%;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .img {
+    width: 83%;
+    height: 95%;
+  }
+}
+
+@media screen and (max-width: 395px) {
+  .img {
+    width: 83%;
+    height: 100%;
+  }
+}
+
+/* =========== Screen Height Media Queries ========= */
+
+@media (max-height: 650px) {
+  .img {
+    width: 83%;
+    height: 93%;
+  }
+}
+@media (max-height: 550px) {
+  .img {
+    width: 83%;
+    height: 90%;
+  }
+}
+
+@media (max-height: 480px) {
+  .img {
+    width: 83%;
+    height: 82%;
+  }
+}
+@media (max-height: 480px) {
+  .img {
+    width: 83%;
+    height: 78%;
+  }
+}
+@media (max-height: 400px) {
+  .img {
+    width: 83%;
+    height: 72%;
+  }
+}
+@media (max-height: 350px) {
+  .img {
+    width: 83%;
+    height: 50%;
+  }
+}
+@media (min-height: 600px) and (max-height: 800px) {
+  /* Styles for screens with a height between 600px and 800px */
+}
