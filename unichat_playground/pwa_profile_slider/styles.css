@@ -1,0 +1,119 @@
+body {
+  overflow: hidden;
+
+  height: 100vh;
+}
+
+#main {
+  position: relative;
+  display: flex; /* Corrected */
+  flex-direction: column;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full width */
+  z-index: 1;
+}
+
+.close-btn {
+  background-color: white;
+  color: blue;
+  width: 200px;
+  height: 80px;
+}
+
+#openSlider {
+  justify-content: center;
+  align-content: center;
+  background-color: black;
+  color: white;
+}
+
+.slider {
+  background-image: url("assets/transparentLogo.png"); /* Replace with your image path */
+  background-size: 80% auto; /* Ensures the image covers the entire screen */
+  background-position: center 65%; /* Centers the image */
+  background-repeat: no-repeat;
+
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 91vh;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+
+  position: fixed; /* Ensures it moves over #main */
+  bottom: 0;
+  left: 0;
+
+  background-color: white; /* Change based on your design */
+  transition: transform 0.5s ease-in-out;
+  transform: translateY(100%); /*270% alternative*/ /* Start hidden below */
+}
+
+.slider.active {
+  transform: translateY(0%);
+}
+.slider.inactive {
+  transform: translateY(100%); /*280% alternative*/
+  transition: transform 0.5s ease-out; /* Smoother exit */
+}
+.slider-content {
+  justify-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.placeholder-bar {
+  width: 50px;
+  height: 3.5px;
+  background-color: black;
+}
+
+.profile-img {
+  width: 60%; /* Adjust width */
+  height: 43%; /* Maintain aspect ratio */
+  display: block; /* Remove extra space below the image */
+  margin: 0 auto; /* Center horizontally */
+  border-radius: 6px;
+}
+.slider-img {
+  width: 60%; /* Adjust width */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove extra space below the image */
+  margin: 0 auto; /* Center horizontally */
+  border-radius: 6px;
+}
+
+.profile-info {
+  margin-top: -3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+
+.profile-info > div {
+  font-size: 18px;
+}
+.connection-assets {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+/* .qrcode {
+  justify-items: center;
+  align-items: center;
+  width: 10px;
+  height: 100px;
+} */
